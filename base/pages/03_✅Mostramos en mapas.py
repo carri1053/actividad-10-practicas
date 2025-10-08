@@ -21,7 +21,7 @@ def generar_mapa():
     return m
 
 
-air = pd.read_csv('lagos_arg.csv')
+air = pd.read_csv('ar-airports.csv')
 st.title("Mapa")
 mapa = generar_mapa()
 
@@ -29,23 +29,23 @@ def agregar_marca_aerop(row):
     
     #st.write(color)
     folium.Marker(
-        [row['lat'], row['lng']],
-        popup=row['Nombre'],
+        [row['latitude_deg'], row['longitude_deg']],
+        popup=row['name'],
         icon=folium.Icon()
         ).add_to(mapa)
 
 ac1,ac2 = st.columns([0.3, 0.7])
-r_areas = ac1.checkbox("Grandes")
-if r_areas:
-    a_larg = lagos[lagos['Sup Tamaño']=='grande']
+air_lar = ac1.checkbox("Grandes")
+if air_lar:
+    a_larg = air[air['type']=='large_airport']
     a_larg.apply(agregar_marca_aerop, axis=1)
-r_parques = ac1.checkbox("Medianos")
-if r_parques:
-    a_med = lagos[lagos['Sup Tamaño']=='medio']
+air_mid = ac1.checkbox("Medianos")
+if air_mid:
+    a_med = air[air['type']=='medium_airport']
     a_med.apply(agregar_marca_aerop, axis=1)
-r_monu = ac1.checkbox("Pequeños")
-if r_monu:
-    a_small = lagos[lagos['Sup Tamaño']=='chico']
+air_small = ac1.checkbox("Pequeños")
+if air_small:
+    a_small = air[air['type']=='small_airport']
     a_small.apply(agregar_marca_aerop, axis=1)
 with ac2:
-    st_folium(mapa, key='lagos')
+    st_folium(mapa, key='air')

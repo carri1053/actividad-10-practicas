@@ -23,6 +23,7 @@ def generar_mapa():
 
 air = pd.read_csv('ar-airports.csv')
 st.title("Mapa")
+st.write("en el mapa se puede ver los tipos de aeropuertos ")
 mapa = generar_mapa()
 
 def agregar_marca_aerop(row):

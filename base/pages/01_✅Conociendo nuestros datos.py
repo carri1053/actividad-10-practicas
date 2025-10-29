@@ -5,7 +5,7 @@ air =  pd.read_csv('ar-airports.csv')
 st.title("Parte 1")
 st.header("Datos que encontraron")
 st.write("La información que encotramos en el dataset de aeropuertos Argentinos:")
-st.write("Los tipos de aeropuertos que tiene son: aeropuertos de globos, helicopteros, grandes, medianos, pequeños y cerrados." \
+st.write("Los tipos de aeropuertos que tiene que estos son: aeropuertos de globos, helicopteros, grandes, medianos, pequeños y cerrados." \
 " El dataset tambien te muestra los Nombres y la cantidad aerpuertos que hay en total . " \
 " Esta muestra la ubicacion del aeropuerto según las cordenadas" \
 "y su pagina web si es que esta la tiene")

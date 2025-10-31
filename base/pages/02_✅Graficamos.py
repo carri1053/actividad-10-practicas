@@ -7,7 +7,7 @@ st.write("")
 
 lagos = pd.read_csv('ar-airports.csv')
 st.title("Gráfico")
-st.write("En este grafico mostramos que tipo de aeropuerto hay mas en la Argentina en este caso es el aeropuerto pequeño ")
+st.write("En este grafico mostramos que tipo de aeropuerto hay mas en la Argentina en este caso es el pequeño ")
 fig,ax = plt.subplots()
 # Crear el gráfico de barras
 conteo_tipos = lagos['type'].value_counts()

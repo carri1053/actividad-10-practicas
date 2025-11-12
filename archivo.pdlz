@@ -1,0 +1,188 @@
+{
+  "_signature": "PDLZ_v1::1762961399187",
+  "data": {
+    "variables": [
+      {
+        "id": "193409983",
+        "name": "air"
+      }
+    ],
+    "csvsData": [
+      {
+        "id": 4270031538,
+        "filename": "ar-airports.csv",
+        "columnsNames": [
+          "id",
+          "ident",
+          "type",
+          "name",
+          "latitude_deg",
+          "longitude_deg",
+          "elevation_ft",
+          "continent",
+          "country_name",
+          "iso_country",
+          "region_name",
+          "iso_region",
+          "local_region",
+          "municipality",
+          "scheduled_service",
+          "gps_code",
+          "icao_code",
+          "iata_code",
+          "local_code",
+          "home_link",
+          "wikipedia_link",
+          "keywords",
+          "score",
+          "last_updated"
+        ]
+      }
+    ],
+    "blocks": {
+      "blocks": {
+        "languageVersion": 0,
+        "blocks": [
+          {
+            "type": "variables_set",
+            "id": "6fTwRT)9GloJxP){J${{",
+            "x": 38,
+            "y": 52,
+            "fields": {
+              "variableSetterKey": "193409983"
+            },
+            "inputs": {
+              "VALUE": {
+                "block": {
+                  "type": "read_csv",
+                  "id": "eAL~K0NUCIl}LX)I1uw*",
+                  "fields": {
+                    "csvOptions": "4270031538"
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "map_viewer",
+                "id": "rj@D7,6-anK1GZ2dcs7_",
+                "inputs": {
+                  "DATAFRAME": {
+                    "block": {
+                      "type": "variables_get",
+                      "id": "{C0q)V;A?Q2m[6h;me#`",
+                      "fields": {
+                        "variableGetterKey": "193409983"
+                      }
+                    }
+                  },
+                  "LAT": {
+                    "block": {
+                      "type": "get_column_name",
+                      "id": "H1Xh}kBkn/2A_#YDXG`p",
+                      "inputs": {
+                        "COLUMN_SERIES": {
+                          "block": {
+                            "type": "property",
+                            "id": "J{5;p*D@5;eTwB]dfL4p",
+                            "extraState": {
+                              "selectedOption": "latitude_deg"
+                            },
+                            "fields": {
+                              "dropdown": "latitude_deg"
+                            },
+                            "inputs": {
+                              "blockInput": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": ")+(Sc?4:![|+$)??I8XP",
+                                  "fields": {
+                                    "variableGetterKey": "193409983"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "LONG": {
+                    "block": {
+                      "type": "get_column_name",
+                      "id": "LTFwP36D6lAx|Vn?pO{9",
+                      "inputs": {
+                        "COLUMN_SERIES": {
+                          "block": {
+                            "type": "property",
+                            "id": "?|8//EmBpxIDga3*$9f6",
+                            "extraState": {
+                              "selectedOption": "longitude_deg"
+                            },
+                            "fields": {
+                              "dropdown": "longitude_deg"
+                            },
+                            "inputs": {
+                              "blockInput": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": "FeL;QsU;-F1%6UG@4(z{",
+                                  "fields": {
+                                    "variableGetterKey": "193409983"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "CATEGORY": {
+                    "block": {
+                      "type": "get_column_name",
+                      "id": "^/XP]GndxfCh+UUNM0+)",
+                      "inputs": {
+                        "COLUMN_SERIES": {
+                          "block": {
+                            "type": "get_column_name",
+                            "id": ")7*KtnQ*JZSTAOqvy:xe",
+                            "inputs": {
+                              "COLUMN_SERIES": {
+                                "block": {
+                                  "type": "property",
+                                  "id": "@Wk2cUb0X715nw#:(Nuq",
+                                  "extraState": {
+                                    "selectedOption": "name"
+                                  },
+                                  "fields": {
+                                    "dropdown": "name"
+                                  },
+                                  "inputs": {
+                                    "blockInput": {
+                                      "block": {
+                                        "type": "variables_get",
+                                        "id": "?0d1,WmOJB!W*=A+,boC",
+                                        "fields": {
+                                          "variableGetterKey": "193409983"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
